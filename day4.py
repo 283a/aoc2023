@@ -1,9 +1,11 @@
+"""day4"""
 import os
 import re
 from utils import read_lines_from_file
 
 def day4_part1():
-    input_list = read_lines_from_file(os.path.join("aoc2023", "input4.txt"))    
+    """part1"""
+    input_list = read_lines_from_file(os.path.join("aoc2023", "input4.txt"))
     result = 0
 
     for line in input_list:
@@ -12,23 +14,23 @@ def day4_part1():
         point_index = line.find(':')
 
         winner = re.findall(r'\d+', line[point_index:slash_index])
-        
+
         given = re.findall(r'\d+', line[slash_index:])
 
         line_count = 0
 
         for val in winner:
             if val in given:
-                if line_count == 0: 
+                if line_count == 0:
                     line_count = 1
                 else:
                     line_count = line_count * 2
-        
         result += line_count
 
     return result
 
 def day4_part2():
+    """part2"""
     input_list = read_lines_from_file(os.path.join("aoc2023", "input4.txt"))
 
     slash_index = input_list[0].find('|')
