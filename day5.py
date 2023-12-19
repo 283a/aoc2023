@@ -1,12 +1,7 @@
 import re
+import os
+from utils import read_lines_from_file
 
-def read_input(filepath):
-    numbers = list()
-    with open(filepath, "r") as f:
-        for line in f:
-            numbers.append(line)
-    return numbers
-
-def day4_part1():
+def day5_part1():
+    input_list = read_lines_from_file(os.path.join("aoc2023", "input5.txt"))
     
-    return 0
