@@ -1,12 +1,14 @@
 """day6"""
 import re
 
+
 def read_input(filepath):
     numbers = list()
     with open(filepath, "r") as f:
         for line in f:
             numbers.append(line)
     return numbers
+
 
 def day6_part1():
     """part1"""
@@ -17,18 +19,18 @@ def day6_part1():
 
     result = 1
 
-    for x in range(0,len(times)):
+    for x in range(0, len(times)):
 
         time_given = int(times[x])
 
         count = 0
 
-        for time_pressed in range(1,time_given):
+        for time_pressed in range(1, time_given):
             distance_raced = (time_given - time_pressed) * time_pressed
-            if(distance_raced > int(distances[x])):
+            if (distance_raced > int(distances[x])):
                 count = count + 1
 
-        result = result * count        
+        result = result * count
 
     return result
 
@@ -52,11 +54,12 @@ def day6_part2():
 
     count = 0
 
-    for time_pressed in range(1,time_given):
+    for time_pressed in range(1, time_given):
         distance_raced = (time_given - time_pressed) * time_pressed
         if distance_raced > int(distance):
             count = count + 1
 
     return count
+
 
 print(day6_part2())

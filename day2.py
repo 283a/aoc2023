@@ -2,11 +2,13 @@
 import re
 import os
 
+
 def read_input(filepath):
     numbers = list()
     with open(filepath, "r") as f:
         numbers = f.readlines()
     return numbers
+
 
 def day2_part1():
     """part2"""
@@ -33,6 +35,7 @@ def day2_part1():
 
     return result
 
+
 def day2_part2():
     """part2"""
     input_list = read_input(os.path.join("aoc2023", "input2.txt"))
@@ -55,16 +58,17 @@ def day2_part2():
             for number, color in matches:
                 number = int(number)
 
-                if color == 'red' and red_smallest < number: 
+                if color == 'red' and red_smallest < number:
                     red_smallest = number
-                if color == 'green' and green_smallest < number: 
+                if color == 'green' and green_smallest < number:
                     green_smallest = number
-                if color == 'blue' and blue_smallest < number: 
+                if color == 'blue' and blue_smallest < number:
                     blue_smallest = number
 
             result += (red_smallest*green_smallest*blue_smallest)
 
     return result
+
 
 # print(day2_part1())
 print(day2_part2())

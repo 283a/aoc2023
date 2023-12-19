@@ -1,5 +1,6 @@
 import re
 
+
 def read_input(filepath):
     numbers = list()
     with open(filepath, "r") as f:
@@ -7,15 +8,18 @@ def read_input(filepath):
             numbers.append(line)
     return numbers
 
+
 inputList = read_input("aoc2023\input1.txt")
 
-def firstPart():
+
+def part1():
+    """part1"""
     result = 0
 
     for x in inputList:
         # Iterate over each index of the string
         number1 = ""
-        number2 = "" 
+        number2 = ""
         for i in range(len(x)):
             if x[i].isdigit():
                 number1 = x[i]
@@ -29,14 +33,17 @@ def firstPart():
 
     print(result)
 
-def secondPart():
+
+def part2():
+    """part2"""
     result = 0
     resultnumber = "0"
-    number_in_text = ["one","two","three","four","five","six","seven","eight","nine"]
+    number_in_text = ["one", "two", "three", "four",
+                      "five", "six", "seven", "eight", "nine"]
 
     for x in inputList:
-        number1 =0
-        number2 =0
+        number1 = 0
+        number2 = 0
         number1_index = len(x)
         number2_index = -1
 
@@ -72,4 +79,5 @@ def secondPart():
 
     print(result)
 
-secondPart()
+
+part2()
