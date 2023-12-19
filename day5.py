@@ -34,7 +34,7 @@ def day5_part1():
 
 def day5_part2():
     """part2"""
-    input_list = read_lines_from_file(os.path.join("input5.txt"))
+    input_list = read_lines_from_file(os.path.join("aoc2023","input5.txt"))
 
     seed_list = re.findall(r'\d+', input_list[0])
     seed_list = [int(num) for num in seed_list]
@@ -49,7 +49,7 @@ def day5_part2():
         number_list.append(numbers)
 
     result = []
-    l = 0
+
     for n in range(0, len(seed_list), 2):
         for x in range(seed_list[n], seed_list[n]+seed_list[n+1]):
             map_finished = False
@@ -60,6 +60,8 @@ def day5_part2():
                     x = numbers[0] + (x-numbers[1])
                     map_finished = True
             result.append(x)
+        result = [min(result)]
+        print(result)
 
     print(min(result))
 
