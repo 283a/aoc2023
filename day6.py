@@ -1,3 +1,4 @@
+"""day6"""
 import re
 
 def read_input(filepath):
@@ -8,6 +9,7 @@ def read_input(filepath):
     return numbers
 
 def day6_part1():
+    """part1"""
     input_list = read_input("aoc2023\input6.txt")
 
     times = re.findall(r'\d+', input_list[0])
@@ -32,6 +34,7 @@ def day6_part1():
 
 
 def day6_part2():
+    """part2"""
     input_list = read_input("aoc2023\input6.txt")
 
     times = re.findall(r'\d+', input_list[0])
@@ -51,8 +54,8 @@ def day6_part2():
 
     for time_pressed in range(1,time_given):
         distance_raced = (time_given - time_pressed) * time_pressed
-        if(distance_raced > int(distance)):
-            count = count + 1    
+        if distance_raced > int(distance):
+            count = count + 1
 
     return count
 

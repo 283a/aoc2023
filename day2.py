@@ -1,3 +1,4 @@
+"""day2"""
 import re
 import os
 
@@ -8,6 +9,7 @@ def read_input(filepath):
     return numbers
 
 def day2_part1():
+    """part2"""
     input_list = read_input(os.path.join("aoc2023", "input2.txt"))
     result = 0
 
@@ -32,6 +34,7 @@ def day2_part1():
     return result
 
 def day2_part2():
+    """part2"""
     input_list = read_input(os.path.join("aoc2023", "input2.txt"))
     result = 0
 
